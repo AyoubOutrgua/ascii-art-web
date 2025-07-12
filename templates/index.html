@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ascii Art Web</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,24 +16,22 @@
         <section class="mainSection">
             <div class="inputSection">
                 <form action="">
-                    <label for="banner">Select a banner: </label>
-                    <select name="banner" id="banner">
-                        <option value="Standard">Standard</option>
-                        <option value="Shadow">Shadow</option>
-                        <option value="Thinkertoy">Thinkertoy</option>
-                    </select>
-                    <textarea rows="10" cols="30" class="inputText"></textarea>
-                    <input type="submit" class="btn"/>
+                    <div class="formControls">
+                        <div>
+                            <label for="banner">Select a banner : </label>
+                            <select class="banner" name="banner" id="banner">
+                                <option value="Standard">Standard</option>
+                                <option value="Shadow">Shadow</option>
+                                <option value="Thinkertoy">Thinkertoy</option>
+                            </select>
+                        </div>
+                        <textarea rows="10" cols="30" class="inputText" placeholder="your text here..."></textarea>
+                        <input type="submit" class="btn"/>
+                    </div>
                 </form>
             </div>
             <div class="outputSection">
-                <pre class="outputText">sdgdfgdfg 
-                    fgd
-                    dffd
-                    ggfgfh
-                    fg                  j       jkkj            kjh hj              popo                                                                                                                                                        opo                     kjkjkkj
-                    kjhkhk
-                </pre>
+                <pre class="outputText"></pre>
             </div>
         </section>
     </main>

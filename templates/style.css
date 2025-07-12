@@ -5,6 +5,7 @@
 }
 
 body{
+    font-family: "Roboto", sans-serif;
     background-color: #F9F9F9;
     color: #000;
 }
@@ -23,6 +24,15 @@ body{
     box-shadow: 1px 1px 8px 1px #9c9c9c71 ;
     border-radius: 10px;
     padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.formControls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
 }
 
 .outputSection{
@@ -34,17 +44,20 @@ body{
     box-shadow: 1px 1px 8px 1px #9c9c9c71 ;
 }
 
-
-
 .inputText {
-    width: 20vw;
-    height: 25vh;
-    max-width: 25vw;
-    max-height: 25vh;
+    width: 25vw;
+    height: 23vh;
     display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    resize: none;
+    margin-bottom: 15px;
 }
 
-.outputText{
+.outputText {
     display: flex;
     padding: 40px 30px;
     width: 100%;
@@ -53,3 +66,39 @@ body{
     overflow: auto;
     
 }
+
+.selectSection {
+    font-size: 18px;
+}
+
+.banner {
+    width: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    margin: 15px 0px;
+}
+
+.inputText:focus, .banner:focus {
+    border-color: #1e92ff; 
+    outline: none;
+}
+
+.btn {
+    background-color: #1e92ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
