@@ -102,3 +102,8 @@ body{
   .btn:hover {
     background-color: #45a049;
   }
+
+  textarea, pre {
+      scrollbar-width: thin; 
+      scrollbar-color: #1e92ff #eee
+  }
