@@ -18,14 +18,13 @@ body{
 
 .inputSection{
     margin-top: 40px;
-    width: 30vw;
-    height: 40vh;
     background-color: #FFF;
     box-shadow: 1px 1px 8px 1px #9c9c9c71 ;
     border-radius: 10px;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
+    padding: 10px 20px;
 }
 
 .formControls {
@@ -45,8 +44,6 @@ body{
 }
 
 .inputText {
-    width: 25vw;
-    height: 23vh;
     display: block;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -54,7 +51,7 @@ body{
     text-align: center;
     padding: 10px;
     resize: none;
-    margin-bottom: 15px;
+    margin: 0px 20px;
 }
 
 .outputText {
@@ -97,6 +94,8 @@ body{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 10px 0px;
+
   }
   
   .btn:hover {
