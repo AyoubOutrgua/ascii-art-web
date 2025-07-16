@@ -15,23 +15,24 @@
     <main>
         <section class="mainSection">
             <div class="inputSection">
-                <form action="/submit" method="POST">
+                <form action="/asciiart" method="POST">
                     <div class="formControls">
                         <div>
                             <label for="banner">Select a banner : </label>
                             <select class="banner" name="banner" id="banner">
-                                <option value="Standard">Standard</option>
-                                <option value="Shadow">Shadow</option>
-                                <option value="Thinkertoy">Thinkertoy</option>
+                                <option value="standard">Standard</option>
+                                <option value="shadow">Shadow</option>
+                                <option value="thinkertoy">Thinkertoy</option>
                             </select>
                         </div>
                         <textarea name="text" rows="10" cols="30" class="inputText" placeholder="your text here..."></textarea>
-                        <input type="submit" class="btn"/>
+                        
+                        <button type="submit" class="btn" >Submit</button>
                     </div>
                 </form>
             </div>
             <div class="outputSection">
-                <pre class="outputText">{{.Body}}</pre>
+                <pre class="outputText">{{.result}}</pre>
             </div>
         </section>
     </main>
