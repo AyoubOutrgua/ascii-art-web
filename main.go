@@ -14,7 +14,6 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handlerMainFunc)
 	http.HandleFunc("/asciiart", handlerArtFunc)
-	// http.HandleFunc("/error", handleError)
 	fmt.Println("runing server : http://localhost:8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
@@ -30,7 +29,8 @@ func handlerMainFunc(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
-		http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		// http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		handleError(w, "Internal Server Error!", http.StatusInternalServerError)
 		return
 	}
 	tmpl.Execute(w, nil)
@@ -44,7 +44,8 @@ func handlerArtFunc(w http.ResponseWriter, r *http.Request) {
 	}
 	tmp, err := template.ParseFiles("templates/index.html")
 	if err != nil {
-		http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		// http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		handleError(w, "Internal Server Error!", http.StatusInternalServerError)
 		return
 	}
 	errorForm := r.ParseForm()
@@ -92,5 +93,6 @@ func handleError(w http.ResponseWriter, errorText string, statusCode int) {
 		http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
 		return
 	}
+	w.WriteHeader(statusCode)
 	tmpl.Execute(w, myMap)
 }
