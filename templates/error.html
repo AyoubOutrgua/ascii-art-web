@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Error!</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+  h6 { color: red; font-size: 40px; }
+</style>
+
+
 </head>
 <body>
-    <h1>Opps...</h1>
-    <h2>{{.errorText}}</h2>
-    <h3>{{.statusCode}}</h3>
+    <section class="errorSection">
+        <h2 class="statusCode">{{.statusCode}}</h2>
+        <h6 class="errorText">{{.errorText}}</h6>
+        <a href="/" class="btnBack">Go to Homepage</a>
+    </section>
 </body>
 </html>

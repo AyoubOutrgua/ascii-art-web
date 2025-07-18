@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"ascii-art-web/functions"
 )
@@ -15,7 +16,10 @@ func main() {
 	http.HandleFunc("/asciiart", handlerArtFunc)
 	// http.HandleFunc("/error", handleError)
 	fmt.Println("runing server : http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		fmt.Println("Error", err)
+	}
 }
 
 func handlerMainFunc(w http.ResponseWriter, r *http.Request) {
@@ -63,7 +67,12 @@ func handlerArtFunc(w http.ResponseWriter, r *http.Request) {
 		handleError(w, "Bad Request!", http.StatusBadRequest)
 		return
 	}
-
+	cleanText := strings.ReplaceAll(text[0], "\r", "")
+	if len(cleanText) > 1000 || len(cleanText) == 0 {
+		// http.Error(w, "400 Bad Request!", http.StatusBadRequest)
+		handleError(w, "Bad Request!", http.StatusBadRequest)
+		return
+	}
 	result, checkError := functions.HandelAsciiArt(text[0], banner[0])
 	if checkError {
 		// http.Error(w, "400 Bad Request!", http.StatusBadRequest)
