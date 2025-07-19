@@ -17,3 +17,4 @@ func HandelAsciiArt(inputText, banner string) (string, bool) {
 	// calling functions to handle the input
 	return AppendArt(wordsSlice, AsciiArtTable(banner)), false
 }
+ 

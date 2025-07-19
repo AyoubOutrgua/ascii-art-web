@@ -122,8 +122,9 @@ body{
 
 
 
-  
 
+
+  /* Style Error Page*/
 
 .errorSection {
     display: flex;
