@@ -33,7 +33,12 @@ func handlerMainFunc(w http.ResponseWriter, r *http.Request) {
 		handleError(w, "Internal Server Error!", http.StatusInternalServerError)
 		return
 	}
-	tmpl.Execute(w, nil)
+	execError := tmpl.Execute(w, nil)
+	if execError != nil {
+		// http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		handleError(w, "Internal Server Error!", http.StatusInternalServerError)
+		return
+	}
 }
 
 func handlerArtFunc(w http.ResponseWriter, r *http.Request) {
@@ -80,7 +85,12 @@ func handlerArtFunc(w http.ResponseWriter, r *http.Request) {
 		handleError(w, "Bad Request!", http.StatusBadRequest)
 		return
 	}
-	tmp.Execute(w, result)
+	execError := tmp.Execute(w, result)
+	if execError != nil {
+		// http.Error(w, "500 Internal Server Error!", http.StatusInternalServerError)
+		handleError(w, "Internal Server Error!", http.StatusInternalServerError)
+		return
+	}
 }
 
 func handleError(w http.ResponseWriter, errorText string, statusCode int) {
