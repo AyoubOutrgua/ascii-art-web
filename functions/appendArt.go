@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// a function to range in the input and print it if matches with the map values
+// a function to range in the input and print it if matches with the map values.
 func AppendArt(wordsSlice []string, asciiArtTable map[int]string) string {
 	artSlice := [][]string{}
 	asciiArtResult := ""
@@ -31,8 +31,6 @@ func AppendArt(wordsSlice []string, asciiArtTable map[int]string) string {
 			}
 			asciiArtResult = asciiArtResult + strings.Join(lineParts, "") + "\n"
 		}
-
-		// PrintArt(artSlice)
 		artSlice = nil
 	}
 	return asciiArtResult

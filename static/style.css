@@ -1,4 +1,4 @@
-*{
+  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +9,9 @@ body{
     background-color: #F9F9F9;
     color: #000;
 }
+
+
+/*style main*/
 
 .mainSection{
     display: flex;
@@ -105,25 +108,8 @@ body{
       scrollbar-width: thin; 
       scrollbar-color: #1e92ff #eee
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+  
   /* Style Error Page*/
 
 .errorSection {
